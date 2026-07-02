@@ -1213,9 +1213,7 @@ class Handler(http.server.BaseHTTPRequestHandler):
 #  ENTRY POINT
 # ─────────────────────────────────────────────────────────
 def run(port=8000):
-    from http.server import ThreadingHTTPServer
-
-server = ThreadingHTTPServer(("0.0.0.0", port), Handler)
+    server = http.server.HTTPServer(("0.0.0.0", port), Handler)
     print(f"""
 ╔══════════════════════════════════════════╗
 ║  💸  Smart Expenses Analyzer  v4.0       ║
